@@ -1,0 +1,13 @@
+---
+pre-commit:
+  commands:
+    zeitwerk:
+      glob: "**/*.rb"
+      run: bundle exec rake zeitwerk:check 2>/dev/null
+      timeout: 30s
+
+pre-push:
+  commands:
+    zeitwerk:
+      run: bundle exec rake zeitwerk:check 2>/dev/null
+      timeout: 30s
